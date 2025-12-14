@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 using System.IO;
-using System.Data;
-using static System.Net.Mime.MediaTypeNames;
-using System.Security.Cryptography;
+using System.Linq;
+using System.Text;
 
 namespace ce103_hw3__library_lib
 {
-    public class Books
+    // Clean Book Model
+    public class Book
     {
         public int Id { get; set; }
         public string BookName { get; set; }
@@ -28,87 +23,213 @@ namespace ce103_hw3__library_lib
         public string AuthorKeywords { get; set; }
         public string Tags { get; set; }
         public string Abstract { get; set; }
-        public string URL { get; set; }
-        public int DOI { get; set; }
-        public int ISBN { get; set; }
+        public string Url { get; set; }
+        public int Doi { get; set; }
+        public int Isbn { get; set; }
         public int Rack { get; set; }
         public int Row { get; set; }
-    }
-    public class BookList
-    {
-        public string _text { get; set; }
-        public void bookList()
-        {
-            Console.Clear();
-            int file_name;
-            string file_location = @" C:\LibrarySystem\Book list\Books.dat";
-            _text = System.IO.File.ReadAllText(file_location);
-            Console.Write(_text);
 
+        public override string ToString()
+        {
+            return $"ID: {Id}\nBook Name: {BookName}\nAuthor: {Author}\nCategory: {Category}\nYear: {Year}\nPages: {Pages}\nEdition: {Edition}\nEditor: {Editors}\nPublisher: {Publisher}\nPrice: {Price}\nCity: {City}\nAuthor Keywords: {AuthorKeywords}\nTags: {Tags}\nAbstract: {Abstract}\nURL: {Url}\nDOI: {Doi}\nISBN: {Isbn}\nRack no: {Rack}\nRow no: {Row}\n-------------------------";
         }
     }
-    public class SearchBook
+
+    // Service class to handle logic
+    public class LibraryManager
     {
-        public string _book_id { get; set; }
-        public string _file_location { get; set; }
-        public void Searchbook()
+        // Dynamic root path
+        private readonly string _rootPath;
+        private readonly string _booksPath;
+        private readonly string _categoriesPath;
+        private readonly string _borrowedPath;
+        private readonly string _returnedPath;
+
+        public LibraryManager()
         {
-            string location = _file_location;
-            string bookid = _book_id;
+            // Use BaseDirectory for portability
+            _rootPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LibraryData");
+            _booksPath = Path.Combine(_rootPath, "Books");
+            _categoriesPath = Path.Combine(_rootPath, "Categories");
+            _borrowedPath = Path.Combine(_rootPath, "BookStatus", "Borrowed");
+            _returnedPath = Path.Combine(_rootPath, "BookStatus", "Returned");
 
+            InitializeDirectories();
+        }
 
-            FileStream fl = new FileStream(location, FileMode.Open, FileAccess.Read);
-            StreamReader read = new StreamReader(fl);
-            string text = read.ReadLine();
+        private void InitializeDirectories()
+        {
+            Directory.CreateDirectory(_rootPath);
+            Directory.CreateDirectory(_booksPath);
+            Directory.CreateDirectory(_categoriesPath);
+            Directory.CreateDirectory(_borrowedPath);
+            Directory.CreateDirectory(_returnedPath);
+        }
 
-            while (text != null)
+        public bool AddBook(Book book)
+        {
+            try
             {
-                Console.WriteLine(text);
-                text = read.ReadLine();
+                string filePath = Path.Combine(_booksPath, $"{book.Id}.dat");
+                if (File.Exists(filePath))
+                {
+                    return false; // Book already exists
+                }
+
+                // Create Category Directory if not exists
+                string categoryPath = Path.Combine(_categoriesPath, book.Category);
+                Directory.CreateDirectory(categoryPath);
+
+                // Save to Books folder
+                File.WriteAllText(filePath, book.ToString(), Encoding.GetEncoding("Windows-1254"));
+
+                // Save to Categories folder (Original logic copied for consistency)
+                string catFilePath = Path.Combine(categoryPath, $"{book.BookName}.dat");
+                File.WriteAllText(catFilePath, book.ToString(), Encoding.GetEncoding("Windows-1254"));
+
+                // Default status: Returned (Available)
+                string statusPath = Path.Combine(_returnedPath, $"{book.Id}.dat");
+                File.WriteAllText(statusPath, book.ToString(), Encoding.GetEncoding("Windows-1254"));
+
+                return true;
             }
-            read.Close();
-            fl.Close();
+            catch (Exception)
+            {
+                // In a real app, log the exception
+                return false;
+            }
         }
 
+        public string GetBookContent(int id)
+        {
+            string filePath = Path.Combine(_booksPath, $"{id}.dat");
+            if (File.Exists(filePath))
+            {
+                try
+                {
+                    return File.ReadAllText(filePath, Encoding.GetEncoding("Windows-1254"));
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+            return null;
+        }
+
+        public List<string> GetAllBooks()
+        {
+            var books = new List<string>();
+            try
+            {
+                // Assuming we just read all files in Books directory
+                var files = Directory.GetFiles(_booksPath, "*.dat");
+                foreach (var file in files)
+                {
+                    books.Add(File.ReadAllText(file, Encoding.GetEncoding("Windows-1254")));
+                }
+            }
+            catch
+            {
+                // Handle error
+            }
+            return books;
+        }
+
+        public bool DeleteBook(int id)
+        {
+            try
+            {
+                string filePath = Path.Combine(_booksPath, $"{id}.dat");
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                    
+                    // Also try to delete from status folders to keep clean
+                    string borrowedFile = Path.Combine(_borrowedPath, $"{id}.dat");
+                    if (File.Exists(borrowedFile)) File.Delete(borrowedFile);
+
+                    string returnedFile = Path.Combine(_returnedPath, $"{id}.dat");
+                    if (File.Exists(returnedFile)) File.Delete(returnedFile);
+
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool AddCategory(string categoryName)
+        {
+            try
+            {
+                string path = Path.Combine(_categoriesPath, categoryName);
+                if (Directory.Exists(path))
+                {
+                    return false;
+                }
+                Directory.CreateDirectory(path);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteCategory(string categoryName)
+        {
+            try
+            {
+                string path = Path.Combine(_categoriesPath, categoryName);
+                if (Directory.Exists(path))
+                {
+                    Directory.Delete(path, true);
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public string GetBookStatus(int id)
+        {
+            if (File.Exists(Path.Combine(_borrowedPath, $"{id}.dat")))
+                return "Borrowed";
+            if (File.Exists(Path.Combine(_returnedPath, $"{id}.dat")))
+                return "Available";
+            
+            return "NotFound";
+        }
+
+        public bool UpdateBookStatus(int id, bool toBorrowed)
+        {
+            try
+            {
+                string sourceDir = toBorrowed ? _returnedPath : _borrowedPath;
+                string targetDir = toBorrowed ? _borrowedPath : _returnedPath;
+
+                string sourceFile = Path.Combine(sourceDir, $"{id}.dat");
+                string targetFile = Path.Combine(targetDir, $"{id}.dat");
+
+                if (File.Exists(sourceFile))
+                {
+                    if (File.Exists(targetFile)) File.Delete(targetFile); // Ensure target is clear
+                    File.Move(sourceFile, targetFile);
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
-    public class Categories
-    {
-
-        public string AddCategory { get; set; }
-        public string Del { get; set; }
-        public void category()
-        {
-
-            Directory.Delete(@"C:\LibrarySystem\Categories\" + "\\" + Del, true);
-        }
-        public void addcategory()
-        {
-            Directory.CreateDirectory(@"C:\LibrarySystem\Categories\" + "\\" + AddCategory);
-        }
-    }
-
-    public class BookDelete
-    {
-        public string _book_delete { get; set; }
-        public void bookDelete()
-        {
-            File.Delete(@"C:\LibrarySystem\Books" + "\\" + _book_delete + ".dat");
-        }
-
-    }
-    public class BookStatus
-    {
-        public int _status { get; set; }
-        public void borrowed()
-        {
-            File.Move(@"C:\LibrarySystem\Book Status\Borrowed" + "\\" + _status + ".dat", @"C:\LibrarySystem\Book Status\Returned" + "\\" + _status + ".dat");
-        }
-        public void returned()
-        {
-            File.Move(@"C:\LibrarySystem\Book Status\Returned" + "\\" + _status + ".dat", @"C:\LibrarySystem\Book Status\Borrowed" + "\\" + _status + ".dat");
-        }
-    }
-
-
 }
-

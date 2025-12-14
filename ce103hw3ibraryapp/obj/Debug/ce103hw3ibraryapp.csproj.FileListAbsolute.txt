@@ -9,3 +9,13 @@ C:\Users\berhan\Desktop\ce103hw320222023muhammedberhankokum\ce103hw3\ce103hw3ibr
 C:\Users\berhan\Desktop\ce103hw320222023muhammedberhankokum\ce103hw3\ce103hw3ibraryapp\obj\Debug\ce103hw3ibraryapp.csproj.CopyComplete
 C:\Users\berhan\Desktop\ce103hw320222023muhammedberhankokum\ce103hw3\ce103hw3ibraryapp\obj\Debug\ce103hw3ibraryapp.exe
 C:\Users\berhan\Desktop\ce103hw320222023muhammedberhankokum\ce103hw3\ce103hw3ibraryapp\obj\Debug\ce103hw3ibraryapp.pdb
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3ibraryapp\bin\Debug\ce103hw3ibraryapp.exe.config
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3ibraryapp\bin\Debug\ce103hw3ibraryapp.exe
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3ibraryapp\bin\Debug\ce103hw3ibraryapp.pdb
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3ibraryapp\bin\Debug\ce103hw3librarylib.dll
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3ibraryapp\bin\Debug\ce103hw3librarylib.pdb
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3ibraryapp\obj\Debug\ce103hw3ibraryapp.csproj.AssemblyReference.cache
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3ibraryapp\obj\Debug\ce103hw3ibraryapp.csproj.CoreCompileInputs.cache
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3ibraryapp\obj\Debug\ce103hw3.69555E0D.Up2Date
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3ibraryapp\obj\Debug\ce103hw3ibraryapp.exe
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3ibraryapp\obj\Debug\ce103hw3ibraryapp.pdb

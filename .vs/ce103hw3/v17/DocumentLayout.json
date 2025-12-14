@@ -1,0 +1,102 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\berhan\\Desktop\\github\\library-automation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{944AFF31-A52E-4DFB-BD63-6B22F87FC795}|ce103hw3librarylibtest\\ce103hw3librarylibtest.csproj|C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3librarylibtest\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944AFF31-A52E-4DFB-BD63-6B22F87FC795}|ce103hw3librarylibtest\\ce103hw3librarylibtest.csproj|solutionrelative:ce103hw3librarylibtest\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69B4A230-7116-4B89-9635-F972A61AD19F}|ce103hw3librarylib\\ce103hw3librarylib.csproj|c:\\users\\berhan\\desktop\\github\\library-automation\\ce103hw3librarylib\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69B4A230-7116-4B89-9635-F972A61AD19F}|ce103hw3librarylib\\ce103hw3librarylib.csproj|solutionrelative:ce103hw3librarylib\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D48681F8-4230-4095-AEF4-6CBCEB14B287}|ce103hw3ibraryapp\\ce103hw3ibraryapp.csproj|C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3ibraryapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D48681F8-4230-4095-AEF4-6CBCEB14B287}|ce103hw3ibraryapp\\ce103hw3ibraryapp.csproj|solutionrelative:ce103hw3ibraryapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3librarysetup\\Product.wxs||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ce103hw3librarysetup\\Product.wxs||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3librarysetup\\InformationVariables.wxi||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ce103hw3librarysetup\\InformationVariables.wxi||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3librarylibtest\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "ce103hw3librarylibtest\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3librarylibtest\\UnitTest1.cs",
+              "RelativeToolTip": "ce103hw3librarylibtest\\UnitTest1.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAA1wCQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T16:14:21.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Books.cs",
+              "DocumentMoniker": "C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3librarylib\\Books.cs",
+              "RelativeDocumentMoniker": "ce103hw3librarylib\\Books.cs",
+              "ToolTip": "C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3librarylib\\Books.cs",
+              "RelativeToolTip": "ce103hw3librarylib\\Books.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T16:14:16.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3ibraryapp\\Program.cs",
+              "RelativeDocumentMoniker": "ce103hw3ibraryapp\\Program.cs",
+              "ToolTip": "C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3ibraryapp\\Program.cs",
+              "RelativeToolTip": "ce103hw3ibraryapp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T16:14:11.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InformationVariables.wxi",
+              "DocumentMoniker": "C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3librarysetup\\InformationVariables.wxi",
+              "RelativeDocumentMoniker": "ce103hw3librarysetup\\InformationVariables.wxi",
+              "ToolTip": "C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3librarysetup\\InformationVariables.wxi",
+              "RelativeToolTip": "ce103hw3librarysetup\\InformationVariables.wxi",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAACwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-14T16:14:02.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Product.wxs",
+              "DocumentMoniker": "C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3librarysetup\\Product.wxs",
+              "RelativeDocumentMoniker": "ce103hw3librarysetup\\Product.wxs",
+              "ToolTip": "C:\\Users\\berhan\\Desktop\\github\\library-automation\\ce103hw3librarysetup\\Product.wxs",
+              "RelativeToolTip": "ce103hw3librarysetup\\Product.wxs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-14T16:14:02.672Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

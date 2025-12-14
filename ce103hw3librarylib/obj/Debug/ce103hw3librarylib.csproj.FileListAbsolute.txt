@@ -4,3 +4,9 @@ C:\Users\berhan\Desktop\ce103hw320222023muhammedberhankokum\ce103hw3\ce103hw3lib
 C:\Users\berhan\Desktop\ce103hw320222023muhammedberhankokum\ce103hw3\ce103hw3librarylib\obj\Debug\ce103hw3librarylib.csproj.CoreCompileInputs.cache
 C:\Users\berhan\Desktop\ce103hw320222023muhammedberhankokum\ce103hw3\ce103hw3librarylib\obj\Debug\ce103hw3librarylib.dll
 C:\Users\berhan\Desktop\ce103hw320222023muhammedberhankokum\ce103hw3\ce103hw3librarylib\obj\Debug\ce103hw3librarylib.pdb
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3librarylib\bin\Debug\ce103hw3librarylib.dll
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3librarylib\bin\Debug\ce103hw3librarylib.pdb
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3librarylib\obj\Debug\ce103hw3librarylib.csproj.AssemblyReference.cache
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3librarylib\obj\Debug\ce103hw3librarylib.csproj.CoreCompileInputs.cache
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3librarylib\obj\Debug\ce103hw3librarylib.dll
+C:\Users\berhan\Desktop\github\library-automation\ce103hw3librarylib\obj\Debug\ce103hw3librarylib.pdb
